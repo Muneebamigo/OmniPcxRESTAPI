@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2e1eba5f-786f-4acd-ab8e-9adfa4e98fbf" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2pI3K64fq4hiHMW1WKeUxICfNSk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for GetAuthToken.GetAuthToken.executor": "Run",
+    "Python tests.Python tests for GetAuthToken.GetAuthToken.testcase_01_GetServerAuthkey.executor": "Run",
+    "Python tests.Python tests for GetAuthToken.GetAuthToken.testcase_02_GetSiteAuthkey.executor": "Run",
+    "Python tests.Python tests for test_01_SystemSettings.test_1_UpdateSystemSettings.executor": "Run",
+    "Python tests.Python tests for test_01_SystemSettings.test_1_UpdateSystemSettings.testcase_01_UpdateSystemSettings.executor": "Run",
+    "Python tests.Python tests for test_01_SystemSettings.test_1_UpdateSystemSettings.testcase_02_UpdateSystemSettings.executor": "Run",
+    "Python tests.Python tests for test_01_SystemSettings.test_1_UpdateSystemSettings.testcase_09_UpdateSystemSettings.executor": "Run",
+    "Python tests.Python tests for test_01_SystemSettings.test_1_UpdateSystemSettings.testcase_18_UpdateSystemSettings.executor": "Run",
+    "Python tests.Python tests for test_01_SystemSettings.test_1_UpdateSystemSettings.testcase_19_UpdateSystemSettings.executor": "Run",
+    "Python tests.Python tests for test_01_SystemSettings.test_2_GetSystemSettings.testcase_20_GetSystemSettings.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_01_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_02_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_03_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_04_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_05_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_06_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_07_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_08_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_09_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_17_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_18_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_19_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_20_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_21_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_22_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_23_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_24_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_1_AddPBXConfiguration.testcase_25_AddPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_2_UpdatePBXConfiguration.testcase_10_UpdatePBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_2_UpdatePBXConfiguration.testcase_11_UpdatePBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_2_UpdatePBXConfiguration.testcase_24_UpdatePBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_2_UpdatePBXConfiguration.testcase_27_UpdatePBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_3_GetPBXConfiguration.testcase_12_GetPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_3_GetPBXConfiguration.testcase_13_GetPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_3_GetPBXConfiguration.testcase_14_GetPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_3_GetPBXConfiguration.testcase_25_GetPBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_4_DeletePBXConfiguration.testcase_16_DeletePBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_02_PBXConfiguration.test_4_DeletePBXConfiguration.testcase_26_DeletePBXConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_01_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_02_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_03_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_04_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_05_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_06_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_07_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_17_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_19_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_20_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_1_AddPacketizerConfiguration.testcase_22_AddPacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_03_PacketizerConfiguration.test_4_DeletePacketizerConfiguration.testcase_21_DeletePacketizerConfiguration.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_1_AddDeviceConfiguration.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_1_AddDeviceConfiguration.testcase_01_Add_IPDR_Ext_WithNoROD.executor": "Debug",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_1_AddDeviceConfiguration.testcase_02_Add_IPDR_Ext_WithRODEnabled_RFN.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_1_AddDeviceConfiguration.testcase_29_Add_IPDR_Ext_WithInvalidPBXNodeID.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_1_AddDeviceConfiguration.testcase_30_Add_IP_Attendant_Ext_WhenDuplicateMac.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_1_AddDeviceConfiguration.testcase_40_Add_TDM_Ext_With_ROD_RFN.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_2_GetDeviceConfiguration.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_2_GetDeviceConfiguration.testcase_01_Get_All_Ext.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_2_GetDeviceConfiguration.testcase_03_Get_Ext_byId.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_3_DeleteDeviceConfiguration.testcase_03_Delete_Ext_ThatAssosiatedToAgent.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_4_UpdateDeviceConfiguration.testcase_01_Update_Ext_IPDR_License.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_4_UpdateDeviceConfiguration.testcase_02_Update_Ext_IPDR_ROD.executor": "Run",
+    "Python tests.Python tests for test_04_DeviceConfigurations.test_4_UpdateDeviceConfiguration.testcase_03_Update_Ext_TDM_HandSetType.executor": "Run",
+    "Python tests.Python tests for test_06_SiteAgentConfiguration.test_1_AddSiteAgentConfigurations.testcase_01_AddAgent.executor": "Run",
+    "Python tests.Python tests for test_07_RecordingTransferSettings.UpdateRecordingTransderSettings.testcase_01_UpdateSettings_FTP.executor": "Run",
+    "Python tests.Python tests for test_07_RecordingTransferSettings.UpdateRecordingTransderSettings.testcase_10_UpdateSettings_FTP.executor": "Run",
+    "Python tests.Python tests for test_09_PRSSettings.UpdatePRSSettings.testcase_08_UpdatePRSSettings.executor": "Run",
+    "Python tests.Python tests for test_13_SMTPSettings.UpdateSMTPSettings.testcase_01_UpdateSMTPSettings.executor": "Run",
+    "Python tests.Python tests for test_14_ServerPermission.Test_1_AddServerPermission.test_04_AddDuplicatePermission_With_Default_Admin.executor": "Run",
+    "Python tests.Python tests for test_15_ServerUserConfiguration.Test_4_DeleteServerUser.test_01_DeleteServerUserById_With_Default_Admin.executor": "Run",
+    "Python tests.Python tests for test_19_Branch.test_1_AddBranch.testcase_01_AddBranch.executor": "Run",
+    "Python tests.Python tests for test_19_Branch.test_1_AddBranch.testcase_04_AddBranch.executor": "Run",
+    "Python tests.Python tests for test_19_Branch.test_1_AddBranch.testcase_06_AddBranch.executor": "Run",
+    "Python tests.Python tests for test_19_Branch.test_2_GetBranch.test_08_GetBranch.executor": "Run",
+    "Python tests.Python tests for test_19_Branch.test_4_DeleteBranch.test_24_DeleteBranch.executor": "Run",
+    "Python tests.Python tests for test_19_Branch.test_4_DeleteBranch.test_25_DeleteBranch.executor": "Run",
+    "Python tests.Python tests for test_21_ServerStatus.test_1_GetServerStatus.executor": "Run",
+    "Python tests.Python tests for test_22_SIPTrunk.Add_1_SIPTrunkConfiguration.test_06_AddSipTrunk.executor": "Run",
+    "Python tests.Python tests for test_26_TracesConfiguration.test_1_UpdateTraces_Configuration.testcase_01_UpdateTraces_Configuration.executor": "Run",
+    "Python tests.Python tests for test_26_TracesConfiguration.test_1_UpdateTraces_Configuration.testcase_02_UpdateTraces_Configuration.executor": "Run",
+    "Python tests.Python tests for test_27_SystemLevelFilters.Test_1_AddSLF.testcase_01_AddSLF.executor": "Run",
+    "Python tests.Python tests for test_27_SystemLevelFilters.Test_2_UpdateSLF.testcase_12_UpdateSLF.executor": "Run",
+    "Python tests.Python tests for test_29_DefaultRecordingAction.test_1_DefaultRecordingAction.testcase_10_DefaultRecordingAction.executor": "Run",
+    "Python tests.Python tests for test_29_DefaultRecordingAction.test_1_DefaultRecordingAction.testcase_10_UpdateDefaultRecordingAction.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_02_UpdateSiteSettings_RecordingType_MP3.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_03_UpdateSiteSettings_RecordingType_MP3WithEncryption.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_04_UpdateSiteSettings_TrunkROD_REC.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_05_UpdateSiteSettings_TrunkROD_RFN_WithEncryption.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_06_UpdateSiteSettings_AllowBeep_ON.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_07_UpdateSiteSettings_AllowBeep_ON.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_08_UpdateSiteSettings_AllowBeep_ON.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_09_UpdateSiteSettings_AllowBeep_ON.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_17_UpdateSiteSettings_PBXVoiceGuide_ON.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_18_UpdateSiteSettings_SIPREC_REC.executor": "Run",
+    "Python tests.Python tests for test_30_SiteSettings.Test_1_UpdateSiteSettings.test_19_UpdateSiteSettings_SIPREC_RFN.executor": "Run",
+    "Python tests.Python tests for test_31_SitePermissionConfiguration.test_1_AddSitePermissionConfiguration.testcase_05_AddSitePermission.executor": "Run",
+    "Python tests.Python tests for test_32_UserLevelFilter.test_1_AddUserLevelFilter.testcase_02_AddUserLevelFilter.executor": "Run",
+    "Python tests.Python tests for test_35_ArchiveJob.test_1_AddArchiveJob.executor": "Run",
+    "Python tests.Python tests for test_35_ArchiveJob.test_1_AddArchiveJob.testcase_01_AddArchiveJob.executor": "Run",
+    "Python tests.Python tests for test_35_ArchiveJob.test_2_UpdateArchiveJob.testcase_01_UpdateArchiveJob.executor": "Run",
+    "Python tests.Python tests for test_35_ArchiveJob.test_2_UpdateArchiveJob.testcase_02_UpdateArchiveJob.executor": "Run",
+    "Python tests.Python tests for test_36_Board.test_1_AddBoard.testcase_01_AddBoard.executor": "Run",
+    "Python tests.Python tests for test_36_Board.test_4_DeleteBoard.testcase_03_DeleteBoard.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_1_AddTrunkGroup.testcase_01_AddTrunkGroup.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_1_AddTrunkGroup.testcase_04_AddTrunkGroup.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_3_GetTrunkGroup.testcase_03_GetTrunkGroupData.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_01_GetTrunkGroupData.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_02_AddTrunkGroup.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_03_AddTrunkGroup.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_03_GetTrunkGroupData.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_04_AddTrunkGroup.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_04_DeleteTrunkGroupData.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_05_DeleteTrunkGroupData.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_30_AddTrunkGroup.executor": "Run",
+    "Python tests.Python tests for test_38_TrunkGroup.testcase_02_AddTrunkGroup.executor": "Run",
+    "Python tests.Python tests for test_39_AddCalls.test_1_AddCalls.testcase_01_AddCalls.executor": "Run",
+    "Python tests.Python tests for test_39_AddCalls.test_1_AddCalls.testcase_02_AddCalls.executor": "Run",
+    "Python tests.Python tests for test_39_AddCalls.test_1_AddCalls.testcase_20_AddCalls.executor": "Run",
+    "Python tests.Python tests for test_39_AddCalls.test_1_AddCalls.testcase_31_AddCalls.executor": "Run",
+    "Python tests.Python tests for test_39_AddCalls.test_1_AddCalls.testcase_42_AddCalls.executor": "Run",
+    "Python tests.Python tests for test_41_CallsCount.test_1_Calls_Count.testcase_01_Calls_Count.executor": "Run",
+    "Python tests.Python tests for test_41_CallsCount.test_1_Calls_Count.testcase_61_Calls_Count.executor": "Run",
+    "Python tests.Python tests for test_41_CallsCount.test_1_Calls_Count.testcase_62_Calls_Count.executor": "Run",
+    "Python tests.Python tests for test_42_Notes.test_2_GetNotes.testcase_06_GetNotes.executor": "Run",
+    "Python tests.Python tests for test_45_RecordedFileURL.test_1_RecordedFileURL.testcase_01_Recorded_File_URL.executor": "Run",
+    "Python tests.Python tests for test_47_SearchRecordedCallsByGlobalCallID.test_1_SearchRecordedCallsByGlobalCallID.testcase_04_GetRecordedCallsByGlobalCallID.executor": "Run",
+    "Python tests.Python tests for test_48_SearchRecordedCallsByCallIDs.test_1_SearchRecordedCallsByCallIDs.testcase_06_GetRecordedCallsByGlobalCallID.executor": "Run",
+    "Python tests.Python tests for test_49_EmailTemplate.test_1_UpdateEmailTemplate.executor": "Run",
+    "Python tests.Python tests for test_49_EmailTemplate.test_1_UpdateEmailTemplate.testcase_01_UpdateEmailTemplate.executor": "Run",
+    "Python tests.Python tests for test_49_EmailTemplate.test_2_GetEmailTemplate.testcase_05_UpdateEmailTemplate.executor": "Run",
+    "Python tests.Python tests for test_49_EmailTemplate.test_2_GetEmailTemplate.testcase_06_UpdateEmailTemplate.executor": "Run",
+    "Python tests.Python tests for test_50_SpeechAnalytics.test_1_UpdateSpeechAnalytics.testcase_01_UpdateSpeechAnalytics.executor": "Run",
+    "Python tests.Python tests for test_51_ArchiveSchedule.test_1_AddArchiveSchedule.testcase_01_AddArchiveSchedule.executor": "Run",
+    "Python tests.Python tests for test_60_purpleLicesne_auth.PurpleLicenseAuth.executor": "Run",
+    "Python tests.Python tests for test_99_TestCasesSheetEmail.Test_1_TestCasesSheetEmail.executor": "Run",
+    "Python tests.Python tests in GetAuthToken.py.executor": "Debug",
+    "Python tests.Python tests in test_01_SystemSettings.py.executor": "Run",
+    "Python tests.Python tests in test_02_PBXConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_03_PacketizerConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_04_DeviceConfigurations.py.executor": "Run",
+    "Python tests.Python tests in test_05_TeamConfigurations.py.executor": "Run",
+    "Python tests.Python tests in test_06_SiteAgentConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_07_RecordingTransferSettings.py.executor": "Run",
+    "Python tests.Python tests in test_08_StorageSettings.py.executor": "Run",
+    "Python tests.Python tests in test_09_PRSSettings.py.executor": "Run",
+    "Python tests.Python tests in test_10_RecorderSettings.py.executor": "Run",
+    "Python tests.Python tests in test_11_AuthenticationSettings.py.executor": "Run",
+    "Python tests.Python tests in test_12_SNMPSettings.py.executor": "Run",
+    "Python tests.Python tests in test_13_SMTPSettings.py.executor": "Run",
+    "Python tests.Python tests in test_14_ServerPermission.py.executor": "Run",
+    "Python tests.Python tests in test_15_ServerUserConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_18_ServerIncidents.py.executor": "Run",
+    "Python tests.Python tests in test_19_Branch.py.executor": "Run",
+    "Python tests.Python tests in test_20_SendBranchEmail.py.executor": "Run",
+    "Python tests.Python tests in test_21_ServerStatus.py.executor": "Run",
+    "Python tests.Python tests in test_22_SIPTrunk.py.executor": "Run",
+    "Python tests.Python tests in test_24_EventsConfigurations.py.executor": "Run",
+    "Python tests.Python tests in test_25_ModulesConfigurations.py.executor": "Run",
+    "Python tests.Python tests in test_26_TracesConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_27_SystemLevelFilters.py.executor": "Run",
+    "Python tests.Python tests in test_28_SystemLevelRuleConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_29_DefaultRecordingAction.py.executor": "Run",
+    "Python tests.Python tests in test_30_SiteSettings.py.executor": "Run",
+    "Python tests.Python tests in test_31_SitePermissionConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_32_UserLevelFilter.py.executor": "Run",
+    "Python tests.Python tests in test_33_CallFlagsConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_34_CustomFields.py.executor": "Run",
+    "Python tests.Python tests in test_35_ArchiveJob.py.executor": "Run",
+    "Python tests.Python tests in test_36_Board.py.executor": "Run",
+    "Python tests.Python tests in test_37_Equipment.py.executor": "Run",
+    "Python tests.Python tests in test_38_TrunkGroup.py.executor": "Run",
+    "Python tests.Python tests in test_39_AddCalls.py.executor": "Run",
+    "Python tests.Python tests in test_40_SearchRecordedCalls.py.executor": "Run",
+    "Python tests.Python tests in test_41_CallsCount.py.executor": "Run",
+    "Python tests.Python tests in test_42_Notes.py.executor": "Run",
+    "Python tests.Python tests in test_43_CallFlagsToARecordedCall.py.executor": "Run",
+    "Python tests.Python tests in test_44_CDRFields.py.executor": "Run",
+    "Python tests.Python tests in test_45_RecordedFileURL.py.executor": "Run",
+    "Python tests.Python tests in test_46_RecordedFilePlaybackURL.py.executor": "Run",
+    "Python tests.Python tests in test_47_SearchRecordedCallsByGlobalCallID.py.executor": "Run",
+    "Python tests.Python tests in test_48_SearchRecordedCallsByCallIDs.py.executor": "Run",
+    "Python tests.Python tests in test_49_EmailTemplate.py.executor": "Run",
+    "Python tests.Python tests in test_50_SpeechAnalytics.py.executor": "Run",
+    "Python tests.Python tests in test_51_ArchiveSchedule.py.executor": "Run",
+    "Python tests.Python tests in test_52_SearchRelatedCalls.py.executor": "Run",
+    "Python tests.Python tests in test_53_IncidentSettings.py.executor": "Run",
+    "Python tests.Python tests in test_54_NetworkAdapterSettings.py.executor": "Run",
+    "Python tests.Python tests in test_55_PBXUserManagementConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_56_DashboardConfiguration.py.executor": "Run",
+    "Python tests.Python tests in test_57_NotificationSettings.py.executor": "Run",
+    "Python tests.Python tests in test_60_purpleLicesne_auth.py.executor": "Run",
+    "Python tests.Python tests in test_99_TestCasesSheetEmail.py.executor": "Run",
+    "Python.SeleniumConfigration.executor": "Debug",
+    "Python.SessionKey (1).executor": "Debug",
+    "Python.SessionKey.executor": "Run",
+    "Python.UserSession.executor": "Run",
+    "Python.siteSession.executor": "Run",
+    "Python.siteSessionUser.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/muneeb.ahmed/Downloads/OmniPcx_2.5.0.5-RestAPI_Automation/RESTAPI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\muneeb.ahmed\Downloads\OmniPcx_2.5.0.5-RestAPI_Automation\RESTAPI\Key User" />
+      <recent name="C:\Users\muneeb.ahmed\Downloads\OmniPcx_2.5.0.5-RestAPI_Automation\RESTAPI\test_Provisioning" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_30_AddTrunkGroup">
+    <configuration name="Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_01_GetTrunkGroupData" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="RESTAPI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_Provisioning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_01_GetTrunkGroupData&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_02_AddTrunkGroup" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="RESTAPI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_Provisioning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_02_AddTrunkGroup&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_04_DeleteTrunkGroupData" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="RESTAPI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_Provisioning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_04_DeleteTrunkGroupData&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_05_DeleteTrunkGroupData" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="RESTAPI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_Provisioning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_05_DeleteTrunkGroupData&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_30_AddTrunkGroup" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="RESTAPI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_Provisioning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_30_AddTrunkGroup&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_30_AddTrunkGroup" />
+      <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_01_GetTrunkGroupData" />
+      <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_02_AddTrunkGroup" />
+      <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_04_DeleteTrunkGroupData" />
+      <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_05_DeleteTrunkGroupData" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_30_AddTrunkGroup" />
+        <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_05_DeleteTrunkGroupData" />
+        <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_04_DeleteTrunkGroupData" />
+        <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_02_AddTrunkGroup" />
+        <item itemvalue="Python tests.Python tests for test_38_TrunkGroup.test_5_TrunkGroupErrorCodes.testcase_01_GetTrunkGroupData" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e1eba5f-786f-4acd-ab8e-9adfa4e98fbf" name="Changes" comment="" />
+      <created>1732439695938</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732439695938</updated>
+      <workItem from="1732439697087" duration="15000" />
+      <workItem from="1732631047233" duration="66000" />
+      <workItem from="1732634206356" duration="157000" />
+      <workItem from="1732634523962" duration="865000" />
+      <workItem from="1732637558658" duration="85000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_19_Branch.py</url>
+          <line>944</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_19_Branch.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>564</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/GetAuthToken.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>539</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>1097</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>1101</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>1179</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>1183</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>1530</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>1732</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_01_SystemSettings.py</url>
+          <line>1283</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_02_PBXConfiguration.py</url>
+          <line>120</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_03_PacketizerConfiguration.py</url>
+          <line>1664</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_03_PacketizerConfiguration.py</url>
+          <line>876</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_03_PacketizerConfiguration.py</url>
+          <line>1654</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_03_PacketizerConfiguration.py</url>
+          <line>1663</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_06_SiteAgentConfiguration.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_07_RecordingTransferSettings.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_04_DeviceConfigurations.py</url>
+          <line>3686</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_04_DeviceConfigurations.py</url>
+          <line>3656</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_04_DeviceConfigurations.py</url>
+          <line>3657</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_04_DeviceConfigurations.py</url>
+          <line>3760</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_14_ServerPermission.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_19_Branch.py</url>
+          <line>220</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_28_SystemLevelRuleConfiguration.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_29_DefaultRecordingAction.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_27_SystemLevelFilters.py</url>
+          <line>799</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_29_DefaultRecordingAction.py</url>
+          <line>473</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_30_SiteSettings.py</url>
+          <line>245</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_31_SitePermissionConfiguration.py</url>
+          <line>285</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_33_CallFlagsConfiguration.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_35_ArchiveJob.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_04_DeviceConfigurations.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_38_TrunkGroup.py</url>
+          <line>1005</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_Provisioning/test_38_TrunkGroup.py</url>
+          <line>1108</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
