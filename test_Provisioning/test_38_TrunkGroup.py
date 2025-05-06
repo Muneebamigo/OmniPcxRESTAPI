@@ -899,13 +899,26 @@ class test_5_TrunkGroupErrorCodes(TestCase):
 
             # Write Output Result in Excel File
             finally:
-                common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp)
+                common.UpdateExcelTestCase(
+                    SheetName,
+                    TestCaseID,
+                    URL,
+                    Parameters,
+                    status,
+                    starttime,
+                    resp,
+                    TestDescription="Using Get Method Get Trunk Group data",
+                    Methods="GET Method",
+                    Steps="Call GetTrunkGroup with invalid ID",
+                    ExpectedResult="{'ResponseCode': 400, 'ResponseDescription': 'BAD REQUEST', 'InternalErrorCode': 'OPRTrunkGroup06', 'TrunkGroupList': None, 'TotalRecords': 0}",
+                    ExpectedProcessingTime=2,
+                    ExpectedResponseJSON={'ResponseCode': 400, 'ResponseDescription': 'BAD REQUEST', 'InternalErrorCode': 'OPRTrunkGroup06', 'TrunkGroupList': None, 'TotalRecords': 0},
+                    ExpectedCode=400
+                )
+
         else:
             TestCasesStatus = False
     # Test Case End
-
-
-
 
     # Start Test Case No 38-26
     def testcase_02_AddTrunkGroup(self, TestCasesStatus=True):
@@ -950,10 +963,17 @@ class test_5_TrunkGroupErrorCodes(TestCase):
 
                 # Write Output Result in Excel File
                 finally:
-                    common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp)
+                    common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp,
+                           TestDescription='Using Post Method to Add Trunk Group & verify the error code "OPRTrunkGroup07"',
+                           Methods='POST Method',
+                           Steps='Add Trunk Group with invalid or Non Existing PBXID',
+                           ExpectedResult='Should return OPRTrunkGroup07 error',
+                           ExpectedResponseJSON= {'ResponseCode': 400, 'ResponseDescription': 'BAD REQUEST', 'InternalErrorCode': 'OPRTrunkGroup07', 'TrunkGroupList': None, 'TotalRecords': 0},
+                           ExpectedCode=400,
+                           ExpectedProcessingTime=7.00,)
             else:
                 TestCasesStatus = False
-    # Test Case End
+    # Test Case En
 
     # Start Test Case No 38-27
     def testcase_03_AddTrunkGroup(self, TestCasesStatus=True):
@@ -997,7 +1017,14 @@ class test_5_TrunkGroupErrorCodes(TestCase):
 
             # Write Output Result in Excel File
             finally:
-                common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp)
+                common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp,
+                           TestDescription='Using Post Method to Add Trunk Group to verify the error code "OPRTrunkGroup08"',
+                           Methods='POST Method',
+                           Steps='Add Trunk Group with Duplicate Trunk name',
+                           ExpectedResult='Should return OPRTrunkGroup08 error',
+                           ExpectedCode=409,
+                           ExpectedResponseJSON={'ResponseCode': 409, 'ResponseDescription': 'BAD REQUEST', 'InternalErrorCode': 'OPRTrunkGroup08', 'TrunkGroupList': None, 'TotalRecords': 0},
+                           ExpectedProcessingTime=7.00)
         else:
             TestCasesStatus = False
     # Test Case End
@@ -1048,7 +1075,14 @@ class test_5_TrunkGroupErrorCodes(TestCase):
 
                 # Write Output Result in Excel File
                 finally:
-                    common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp)
+                    common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp,
+                           TestDescription='Using Delete Method Delete Trunk Group data to verify the error code "OPRTrunkGroup09"',
+                           Methods='DELETE Method',
+                           Steps='Delete Trunk Group data with valid ID that is associated with Equipment Number',
+                           ExpectedResult='Should return OPRTrunkGroup09 error',
+                           ExpectedCode=409,
+                           ExpectedResponseJSON={'ResponseCode': 409, 'ResponseDescription': 'BAD REQUEST', 'InternalErrorCode': 'OPRTrunkGroup09', 'TrunkGroupList': None, 'TotalRecords': 0},
+                           ExpectedProcessingTime=7.00)
             else:
                 TestCasesStatus = False
     # Test Case End
@@ -1099,7 +1133,14 @@ class test_5_TrunkGroupErrorCodes(TestCase):
 
             # Write Output Result in Excel File
             finally:
-                common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp)
+                common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp,
+                           TestDescription='Using Delete Method Delete Trunk Group data to validate the error code "OPRTrunkGroup11"',
+                           Methods='DELETE Method',
+                           Steps='Delete Trunk Group data with valid ID that is associated with Trunk Packetizer',
+                           ExpectedResult='Should return OPRTrunkGroup11 error',
+                           ExpectedCode=409,
+                           ExpectedResponseJSON={'ResponseCode': 409, 'ResponseDescription': 'BAD REQUEST', 'InternalErrorCode': 'OPRTrunkGroup11', 'TrunkGroupList': None, 'TotalRecords': 0},
+                           ExpectedProcessingTime=7.00)
         else:
             TestCasesStatus = False
     # Test Case End
@@ -1111,7 +1152,7 @@ class test_5_TrunkGroupErrorCodes(TestCase):
             TestCaseID = '38-30'
             # Calling Common Functions
             common = CF.CommonFunctions()
-            common.Header('Trunk Group', 'Using Post Method to Add Trunk Group', 'Add Trunk Group with all valid Data.')
+            common.Header('Trunk Group', 'Using Post Method to Add Trunk Group', 'Add Trunk Group with all valid Data but user have not permission of trunk group.')
             # Add Node/PBX Function calling
             PBXFunctions = PBXF.test_1_AddPBXConfiguration()
             OXEName, ValidIP = PBXFunctions.testcase_01_AddPBXConfiguration(common.PrereqTestCasesStatusUpdate)
@@ -1158,7 +1199,14 @@ class test_5_TrunkGroupErrorCodes(TestCase):
 
                 # Write Output Result in Excel File
                 finally:
-                    common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp)
+                    common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp,
+                           TestDescription='Using Post Method to Add Trunk Group to validate the error code "OPRTrunkGroup02" but user have not permission of trunk group',
+                           Methods='POST Method',
+                           Steps='Add Trunk Group with all valid Data.',
+                           ExpectedResult='Should return OPRTrunkGroup02 error when data is rejected',
+                           ExpectedCode=400,
+                           ExpectedResponseJSON={'ResponseCode': 400, 'ResponseDescription': 'BAD REQUEST', 'InternalErrorCode': 'OPRTrunkGroup02', 'TrunkGroupList': None, 'TotalRecords': 0},
+                           ExpectedProcessingTime=7.00)
             else:
                 TestCasesStatus = False
 

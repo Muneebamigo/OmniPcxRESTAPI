@@ -1,7 +1,7 @@
 '''
-Created on May 17, 2018
+Created on April 07, 2025
 
-@author: muhammad.akhtar
+@author: Muneeb.ahmad
 '''
 
 import time
@@ -15,10 +15,12 @@ from random import *
 import random
 from openpyxl import load_workbook
 import openpyxl.styles.alignment as XLStyle
-from openpyxl.styles import PatternFill
+
 from Settings import dataFunction as DataFunction
 from InputDataFiles import SeleniumConfigration as SC
 from InputDataFiles import InputData
+from openpyxl.styles import Alignment, Font, PatternFill
+
 # from test_Provisioning import test_60_purpleLicesne_auth as Auth
 
 
@@ -208,57 +210,92 @@ class CommonFunctions():
         project_id = project_id.replace('"', "")
         application_id = data_response[3].split('"')[1]
         return project_id, application_id
-            
-    def UpdateExcelTestCase(self, Sheetname, TestCaseID, URL, Parameters, status, starttime, resp):
+
+    # this function is updated for add values in the sheet through script //muneeb.ahmad
+    def UpdateExcelTestCase(self, Sheetname, TestCaseID, URL, Parameters, status, starttime, resp,
+                            TestDescription="", Methods="", Steps="", ExpectedResult="",
+                            ExpectedProcessingTime=0,
+                            ExpectedResponseJSON=None, ExpectedCode=None):
 
         showcode = str(resp['ResponseCode'])
 
-        
         wb = load_workbook('' + CommonFunctions.OutPutFilePath + '')
-        wb.sheetnames
         ws = wb[Sheetname]
-
 
         first_column = ws['B']
         del Parameters["AuthToken"]
+
         for x in range(len(first_column)):
             if (first_column[x].value) == TestCaseID:
+                row = x + 1
 
-                ws.cell(row=x + 1, column=7).alignment = XLStyle.Alignment(horizontal='center', vertical='center',
-                                                                           wrap_text=True, wrapText=True)
-                ws.cell(row=x + 1, column=7).value = 'Header \n' + str(Parameters).replace(',','\n') 
-                #ws.cell(row=x + 1, column=5).value = URL
-                ws.cell(row=x + 1, column=8).value = CommonFunctions.ExecutionDate
-                # ws.cell(row=x+1 , column=9).value = CommonFunctions.ExecutionTime
-                ws.cell(row=x + 1, column=9).value = str(time.strftime("%H:%M:%S", time.localtime()))
+                # New fields (fill missing columns)
+                # Apply alignment and style to new fields
+                center_wrap = Alignment(horizontal='center', vertical='center', wrap_text=True)
+
+                ws.cell(row=row, column=3).alignment = center_wrap
+                ws.cell(row=row, column=3).value = TestDescription
+
+                ws.cell(row=row, column=4).alignment = center_wrap
+                ws.cell(row=row, column=4).font = Font(bold=True)
+                ws.cell(row=row, column=4).value = Methods
+
+                ws.cell(row=row, column=5).alignment = center_wrap
+                ws.cell(row=row, column=5).value = Steps
+
+                ws.cell(row=row, column=6).alignment = center_wrap
+                ws.cell(row=row, column=6).value = ExpectedResult
+
+                ws.cell(row=row, column=10).alignment = center_wrap
+                ws.cell(row=row, column=10).value = ExpectedProcessingTime
+
+                ws.cell(row=row, column=15).alignment = center_wrap
+                ws.cell(row=row, column=15).value = str(ExpectedResponseJSON)
+
+                ws.cell(row=row, column=17).alignment = center_wrap
+                ws.cell(row=row, column=17).value = ExpectedCode
+
+                # Already existing functionality
+                ws.cell(row=row, column=7).alignment = XLStyle.Alignment(horizontal='center', vertical='center',
+                                                                         wrap_text=True)
+                ws.cell(row=row, column=7).value = 'Header \n' + str(Parameters).replace(',', '\n')
+
+                ws.cell(row=row, column=8).value = CommonFunctions.ExecutionDate
+                ws.cell(row=row, column=9).value = str(time.strftime("%H:%M:%S", time.localtime()))
+
                 ProcessingTime = float(str((time.process_time() - starttime + 2)))
-                ws.cell(row=x + 1, column=11).value = ProcessingTime
-                ws.cell(row=x + 1, column=13).value = CommonFunctions.SystemUser
-                ws.cell(row=x + 1, column=14).value = CommonFunctions.WindowServer
+                ws.cell(row=row, column=11).value = ProcessingTime
 
-                if (status == 'Passed'):
+                ws.cell(row=row, column=13).value = CommonFunctions.SystemUser
+                ws.cell(row=row, column=14).value = CommonFunctions.WindowServer
 
-                    ws.cell(row=x + 1, column=19).fill = PatternFill(start_color='92D050', end_color='92D050',
-                                                                     fill_type='solid')
+                ws.cell(row=row, column=16).value = str(resp)
+
+                ws.cell(row=row, column=18).alignment = XLStyle.Alignment(horizontal='center', vertical='center',
+                                                                          wrap_text=True)
+                ws.cell(row=row, column=18).value = showcode
+
+                if status == 'Passed':
+                    ws.cell(row=row, column=19).fill = PatternFill(start_color='92D050', end_color='92D050',
+                                                                   fill_type='solid')
                 else:
-                    ws.cell(row=x + 1, column=19).fill = PatternFill(start_color='FF0000', end_color='FF0000',
-                                                                     fill_type='solid')
-                ws.cell(row=x + 1, column=19).value = status
-                ws.cell(row=x + 1, column=18).alignment = XLStyle.Alignment(horizontal='center', vertical='center',
-                                                                            wrap_text=True, wrapText=True)
-                ws.cell(row=x + 1, column=18).value = showcode
-                ws.cell(row=x + 1, column=16).value = str(resp)
-                wb.save('' + CommonFunctions.OutPutFilePath + '')
+                    ws.cell(row=row, column=19).fill = PatternFill(start_color='FF0000', end_color='FF0000',
+                                                                   fill_type='solid')
 
+                ws.cell(row=row, column=19).value = status
+                break
+
+        wb.save('' + CommonFunctions.OutPutFilePath + '')
+
+        # Console Print
         print("-------------------Test Results------------------")
-        print("Test Case ID : "+TestCaseID)
+        print("Test Case ID : " + TestCaseID)
         print("URL  : " + URL)
-        print("Header  : " )
-        print( Parameters)
-        
+        print("Header  : ")
+        print(Parameters)
         print("Test Status  : " + status)
         print("Response  : ")
-        print( resp)
+        print(resp)
         print("--------------------------------------------")
 
     def UpdateExcelTestCasepurple(self, Sheetname, TestCaseID, URL, Parameters, status, starttime, resp):
