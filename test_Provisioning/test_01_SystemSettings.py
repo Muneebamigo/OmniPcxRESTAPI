@@ -55,7 +55,7 @@ class test_1_UpdateSystemSettings(TestCase):
         starttime = time.process_time()
 
 
-        # print("TOKEN:"+common.authkey_server())
+
         Parameters = {'AuthToken': config.sessionkey,
                       'AuthUser': config.auth_user,
                       'PrimaryServerIP': ''+self.ssinputdata.MainPrimaryServerIP+'',
@@ -1407,67 +1407,909 @@ class test_2_GetSystemSettings(TestCase):
     #
             
             
-# class test_3_SystemSettings_AddReceiverNumber(TestCase):
-#
-#     # Calling Input Data File
-#     ssinputdata = InputData.InputData()
-#     # Url For Update System Settings
-#     UrlForSystemSettings_AddReceiverNumber = '/SystemSettings/AddReceiverNumber/'
-#
-#     # Start Test Case No 01-01
-#     def testcase_22_SystemSettingsAddReceiverNumber(self, TestCasesStatus=True):
-#
-#         TestCaseID = '01-22'
-#         # Calling Common Functions
-#         common = CF.CommonFunctions()
-#         common.Header('System Settings' , 'Using Post Method System Settings' , 'ADD Receiver number with valid Data')
-#         # Generate Simple Character String Limit 10 Characters
-#         simplestring=common.GenrateSimpleStringLimit10()
-#
-#         # Test Case Start Time
-#         starttime = time.process_time()
-#
-#         Parameters = {'AuthToken':''+common.authkey_server()+'',
-#                       'AuthUser':''+common.authuser+'',
-#                       'PrimaryServerIP': ''+self.ssinputdata.MainPrimaryServerIP+'',
-#                       'SecondaryServerIP': ''+self.ssinputdata.MainSecondaryServerIP+'',
-#                       'ServerName': ''+simplestring+'',
-#                       'ServerRole': '0',
-#                       'DBName': ''+self.ssinputdata.MainSecondaryDBName+'',
-#                       'DBServerName': ''+self.ssinputdata.MainSecondaryDBServerName+'',
-#                       'DBUsername': ''+self.ssinputdata.MainSecondaryDBUsername+'',
-#                       'DBPassword': ''+self.ssinputdata.MainSecondaryDBPassword+'',
-#                       'ReceiverNumber': ''+common.GenerateValidExtension()+'',
-#                       'ServerMode': '0',
-#                       'BranchServerIP': '',
-#                       'OPRID': '',
-#                       'Recorder': '0',
-#                       'BranchRemoteIP': '',
-#
-#                     }
-#
-#         # Url
-#         URL = ''+common.Domain+''+self.UrlForSystemSettings_AddReceiverNumber+''
-#         # Hit API Through Methods
-#         response = requests.post(URL, headers=Parameters)
-#         # API Response in JSon Format
-#         resp=response.json()
-#         print(resp)
-#         #showcode = str(resp['ResponseCode'])
-#
-#         # Response Code Verification
-#         if TestCasesStatus==True:
-#             try:
-#                 if resp['ResponseCode'] == 200:
-#                     print(common.SuccessMessage)
-#                     status = 'Passed'
-#                 else:
-#                     status = 'Failed'
-#                     assert False
-#
-#             # Write Output Result in Excel File
-#             finally:
-#                 common.UpdateExcelTestCase(SheetName, TestCaseID, URL, Parameters, status, starttime, resp)
-#         else:
-#             TestCasesStatus=False
-#             # Test Case End
+class test_3_NegitiveSystemSettings(TestCase):
+    # Calling Input Data File
+    ssinputdata = InputData.InputData()
+    # Url for Get System Settings
+    UrlForGetSystemSettings = '/SystemSettings/Get/'
+    UrlForGetSystemSettings_GetNotificationSettings = '/SystemSettings/GetNotificationSettings/'
+    # Url For Update System Settings
+    UrlForUpdateSystemSettings = '/SystemSettings/UpdateSystemSettings/'
+
+    # Start Test Case No 01-23
+    def testcase_01_GetSystemSettings(self, TestCasesStatus=True):
+
+        TestCaseID = '01-23'
+        # Calling Common Functions
+        common = CF.CommonFunctions()
+        common.Header('System Settings', 'Using Get Method System Settings', 'Get all Data of System Settings with invalid token to verify the internal error code is give in the response.')
+
+        # Test Case Start Time
+        starttime = time.process_time()
+        # Header Parameters of Rest API
+        Parameters = {
+            'AuthToken': "InvalidToken_@123456",  # Invalid token
+            'AuthUser': config.auth_user
+        }
+
+        # Url
+        URL = '' + common.Domain + '' + self.UrlForGetSystemSettings + ''
+        # Hit API Through Methods
+        response = requests.get(URL, headers=Parameters)
+        # API Response in JSon Format
+        resp = response.json()
+        # showcode = str(resp['ResponseCode'])
+
+        # Response Code Verification
+        if TestCasesStatus == True:
+            try:
+                if resp['ResponseCode'] == 401 and resp.get('InternalErrorCode'):
+                    print(common.SuccessMessage)
+                    status = 'Passed'
+                else:
+                    status = 'Failed'
+                    assert False
+
+            # Write Output Result in Excel File
+            finally:
+                common.UpdateExcelTestCase(
+                    SheetName,
+                    TestCaseID,
+                    URL,
+                    Parameters,
+                    status,
+                    starttime,
+                    resp,
+                    TestDescription="Negative case: invalid AuthToken used; expecting 401 Unauthorized presence of InternalErrorCode.",
+                    Methods="GET Method",
+                    Steps="Send request with invalid AuthToken and check 401 status and presence of InternalErrorCode.",
+                    ExpectedResult="401 Unauthorized with a valid InternalErrorCode",
+                    ExpectedProcessingTime=2,
+                    ExpectedResponseJSON={
+                        'ResponseCode': 401,
+                        'ResponseDescription': 'BAD REQUEST',
+                        'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                        "list": "null",
+                        'TotalRecords': 0
+                    },
+                    ExpectedCode=401
+                )
+        else:
+            TestCasesStatus = False
+            # Test Case End
+
+    # Start Test Case No 01-24
+    def testcase_02_GetSystemSettings(self, TestCasesStatus=True):
+
+            TestCaseID = '01-24'
+            # Calling Common Functions
+            common = CF.CommonFunctions()
+            common.Header('System Settings', 'Using Get Method System Settings',
+                          'Get all Data of System Settings with invalid user to verify the internal error code is give in the response.')
+
+            # Test Case Start Time
+            starttime = time.process_time()
+            # Header Parameters of Rest API
+            Parameters = {
+                'AuthToken': config.sessionkey,
+                'AuthUser': "InvalidUser123"
+            }
+
+            # Url
+            URL = '' + common.Domain + '' + self.UrlForGetSystemSettings + ''
+            # Hit API Through Methods
+            response = requests.get(URL, headers=Parameters)
+            # API Response in JSon Format
+            resp = response.json()
+            # showcode = str(resp['ResponseCode'])
+
+            # Response Code Verification
+            if TestCasesStatus == True:
+                try:
+                    if resp['ResponseCode'] == 401 and resp.get('InternalErrorCode'):
+                        print(common.SuccessMessage)
+                        status = 'Passed'
+                    else:
+                        status = 'Failed'
+                        assert False
+
+                # Write Output Result in Excel File
+                finally:
+                    common.UpdateExcelTestCase(
+                        SheetName,
+                        TestCaseID,
+                        URL,
+                        Parameters,
+                        status,
+                        starttime,
+                        resp,
+                        TestDescription="Negative case: invalid AuthUser used; expecting 401 Unauthorized and InternalErrorCode present.",
+                        Methods="GET Method",
+                        Steps="Send request with invalid AuthUser and valid AuthToken, check 401 status and presence of InternalErrorCode.",
+                        ExpectedResult="401 Unauthorized with a valid InternalErrorCode",
+                        ExpectedProcessingTime=2,
+                        ExpectedResponseJSON={
+                            'ResponseCode': 401,
+                            'ResponseDescription': 'BAD REQUEST',
+                            'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                            "list": "null",
+                            'TotalRecords': 0
+                        },
+                        ExpectedCode=401
+                    )
+            else:
+                TestCasesStatus = False
+                # Test Case End
+
+    # Start Test Case No 01-25
+    def testcase_03_GetSystemSettings(self, TestCasesStatus=True):
+
+            TestCaseID = '01-25'
+            # Calling Common Functions
+            common = CF.CommonFunctions()
+            common.Header('System Settings', 'Using Get Method System Settings',
+                          'Get all Data of System Settings with empty AuthToken to verify if unauthorized response with InternalErrorCode is returned.')
+
+            # Test Case Start Time
+            starttime = time.process_time()
+            # Header Parameters of Rest API
+            Parameters = {
+                'AuthToken': '',
+                'AuthUser': "InvalidUser123"
+            }
+
+            # Url
+            URL = '' + common.Domain + '' + self.UrlForGetSystemSettings + ''
+            # Hit API Through Methods
+            response = requests.get(URL, headers=Parameters)
+            # API Response in JSon Format
+            resp = response.json()
+            # showcode = str(resp['ResponseCode'])
+
+            # Response Code Verification
+            if TestCasesStatus == True:
+                try:
+                    if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+                        print(common.SuccessMessage)
+                        status = 'Passed'
+                    else:
+                        status = 'Failed'
+                        assert False
+
+                # Write Output Result in Excel File
+                finally:
+                    common.UpdateExcelTestCase(
+                        SheetName,
+                        TestCaseID,
+                        URL,
+                        Parameters,
+                        status,
+                        starttime,
+                        resp,
+                        TestDescription="Negative case: empty AuthToken used; expecting 401 Unauthorized and InternalErrorCode present.",
+                        Methods="GET Method",
+                        Steps="Send request with empty AuthToken and valid AuthUser, verify 401 Unauthorized and check InternalErrorCode presence.",
+                        ExpectedResult="400 Unauthorized with a valid InternalErrorCode",
+                        ExpectedProcessingTime=2,
+                        ExpectedResponseJSON={
+                            'ResponseCode': 400,
+                            'ResponseDescription': 'BAD REQUEST',
+                            'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                            "list": "null",
+                            'TotalRecords': 0
+                        },
+                        ExpectedCode=400
+                    )
+            else:
+                TestCasesStatus = False
+                # Test Case End
+
+
+    # Start Test Case No 01-26
+    def testcase_04_GetSystemSettings(self, TestCasesStatus=True):
+
+        TestCaseID = '01-26'
+        # Calling Common Functions
+        common = CF.CommonFunctions()
+        common.Header('System Settings', 'Using Get Method System Settings',
+                      'Get all Data of System Settings with empty AuthUser to verify if unauthorized response with InternalErrorCode is returned.')
+
+        # Test Case Start Time
+        starttime = time.process_time()
+        # Header Parameters of Rest API
+        Parameters = {
+            'AuthToken': config.sessionkey,
+            'AuthUser': ""
+        }
+
+        # Url
+        URL = '' + common.Domain + '' + self.UrlForGetSystemSettings + ''
+        # Hit API Through Methods
+        response = requests.get(URL, headers=Parameters)
+        # API Response in JSon Format
+        resp = response.json()
+        # showcode = str(resp['ResponseCode'])
+
+        # Response Code Verification
+        if TestCasesStatus == True:
+            try:
+                if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+                    print(common.SuccessMessage)
+                    status = 'Passed'
+                else:
+                    status = 'Failed'
+                    assert False
+
+            # Write Output Result in Excel File
+            finally:
+                common.UpdateExcelTestCase(
+                    SheetName,
+                    TestCaseID,
+                    URL,
+                    Parameters,
+                    status,
+                    starttime,
+                    resp,
+                    TestDescription="Negative case: empty AuthUser used; expecting 401 Unauthorized and InternalErrorCode present.",
+                    Methods="GET Method",
+                    Steps="Send request with valid AuthToken and empty AuthUser, verify 401 Unauthorized and check InternalErrorCode presence.",
+                    ExpectedResult="400 Unauthorized with a valid InternalErrorCode",
+                    ExpectedProcessingTime=2,
+                    ExpectedResponseJSON={
+                        'ResponseCode': 400,
+                        'ResponseDescription': 'BAD REQUEST',
+                        'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                        "list": "null",
+                        'TotalRecords': 0
+                    },
+                    ExpectedCode=400
+                )
+        else:
+            TestCasesStatus = False
+            # Test Case End
+
+    # Start Test Case No 01-27
+    def testcase_05_UpdateSystemSettings(self, TestCasesStatus=True):
+
+
+
+            TestCaseID = '01-27'
+            # Calling Common Functions
+            common = CF.CommonFunctions()
+            common.Header('System Settings', 'Using Put Method System Settings',
+                          'Negative case: Configure the System Settings with invalid PrimaryServerIP ')
+            # Generate Simple Character String Limit 10 Characters
+            simplestring = common.GenrateSimpleStringLimit10()
+
+            # Test Case Start Time
+            starttime = time.process_time()
+
+            Parameters = {'AuthToken': config.sessionkey,
+                          'AuthUser': config.auth_user,
+                          'PrimaryServerIP': '999.999.999.999',  # Invalid IP address
+                          'SecondaryServerIP': '' + self.ssinputdata.MainSecondaryServerIP + '',
+                          'ServerName': '' + simplestring + '',
+                          'ServerRole': '0',
+                          'DBName': '' + self.ssinputdata.MainSecondaryDBName + '',
+                          'DBServerName': '' + self.ssinputdata.MainSecondaryDBServerName + '',
+                          'DBUsername': '' + self.ssinputdata.MainSecondaryDBUsername + '',
+                          'DBPassword': '' + self.ssinputdata.MainSecondaryDBPassword + '',
+                          'ServerMode': '0',
+                          'BranchServerIP': '',
+                          'OPRID': '',
+                          'Recorder': '0',
+                          'BranchRemoteIP': '',
+
+                          }
+
+            # Url
+            URL = '' + common.Domain + '' + self.UrlForUpdateSystemSettings + ''
+            # Hit API Through Methods
+            response = requests.put(URL, headers=Parameters)
+            # API Response in JSon Format
+            resp = response.json()
+            # showcode = str(resp['ResponseCode'])
+
+            # Response Code Verification
+            if TestCasesStatus == True:
+                try:
+                    if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+
+                        print(common.SuccessMessage)
+                        status = 'Passed'
+                    else:
+                        status = 'Failed'
+                        assert False
+
+                # Write Output Result in Excel File
+                finally:
+                    common.UpdateExcelTestCase(
+                        SheetName,
+                        TestCaseID,
+                        URL,
+                        Parameters,
+                        status,
+                        starttime,
+                        resp,
+                        TestDescription="Negative case: Invalid PrimaryServerIP format (e.g., 999.999.999.999); expecting 400 Bad Request with InternalErrorCode.",
+                        Methods="Put Method",
+                        Steps="Send request with invalid PrimaryServerIP and observe if the system rejects with 400 and InternalErrorCode.",
+                        ExpectedResult="400 Bad Request with a valid InternalErrorCode indicating invalid IP format.",
+                        ExpectedProcessingTime=2,
+                        ExpectedResponseJSON={
+                            'ResponseCode': 400,
+                            'ResponseDescription': 'BAD REQUEST',
+                            'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                            "list": "null",
+                            'TotalRecords': 400
+                        },
+                        ExpectedCode=400
+                    )
+            else:
+                TestCasesStatus = False
+                # Test Case End
+
+
+    # Start Test Case No 01-28
+    def testcase_06_UpdateSystemSettings(self, TestCasesStatus=True):
+
+
+
+            TestCaseID = '01-28'
+            # Calling Common Functions
+            common = CF.CommonFunctions()
+            common.Header('System Settings', 'Using Put Method System Settings',
+                          'Negative case: Configure the System Settings with invalid SecondaryServerIP ')
+            # Generate Simple Character String Limit 10 Characters
+            simplestring = common.GenrateSimpleStringLimit10()
+
+            # Test Case Start Time
+            starttime = time.process_time()
+
+            Parameters = {'AuthToken': config.sessionkey,
+                          'AuthUser': config.auth_user,
+                          'PrimaryServerIP': ''+self.ssinputdata.MainPrimaryServerIP+'',
+                          'SecondaryServerIP': '999.999.999.999',  # Invalid IP address
+                          'ServerName': '' + simplestring + '',
+                          'ServerRole': '0',
+                          'DBName': '' + self.ssinputdata.MainSecondaryDBName + '',
+                          'DBServerName': '' + self.ssinputdata.MainSecondaryDBServerName + '',
+                          'DBUsername': '' + self.ssinputdata.MainSecondaryDBUsername + '',
+                          'DBPassword': '' + self.ssinputdata.MainSecondaryDBPassword + '',
+                          'ServerMode': '0',
+                          'BranchServerIP': '',
+                          'OPRID': '',
+                          'Recorder': '0',
+                          'BranchRemoteIP': '',
+
+                          }
+
+            # Url
+            URL = '' + common.Domain + '' + self.UrlForUpdateSystemSettings + ''
+            # Hit API Through Methods
+            response = requests.put(URL, headers=Parameters)
+            # API Response in JSon Format
+            resp = response.json()
+            # showcode = str(resp['ResponseCode'])
+
+            # Response Code Verification
+            if TestCasesStatus == True:
+                try:
+                    if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+
+                        print(common.SuccessMessage)
+                        status = 'Passed'
+                    else:
+                        status = 'Failed'
+                        assert False
+
+                # Write Output Result in Excel File
+                finally:
+                    common.UpdateExcelTestCase(
+                        SheetName,
+                        TestCaseID,
+                        URL,
+                        Parameters,
+                        status,
+                        starttime,
+                        resp,
+                        TestDescription="Negative case: Invalid SecondaryServerIP format (e.g., 999.999.999.999); expecting 400 Bad Request with InternalErrorCode.",
+                        Methods="Put Method",
+                        Steps="Send request with invalid SecondaryServerIP and observe if the system rejects with 400 and InternalErrorCode.",
+                        ExpectedResult="400 Bad Request with a valid InternalErrorCode indicating invalid IP format.",
+                        ExpectedProcessingTime=2,
+                        ExpectedResponseJSON={
+                            'ResponseCode': 400,
+                            'ResponseDescription': 'BAD REQUEST',
+                            'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                            "list": "null",
+                            'TotalRecords': 400
+                        },
+                        ExpectedCode=400
+                    )
+            else:
+                TestCasesStatus = False
+                # Test Case End
+
+
+    # Start Test Case No 01-29
+    def testcase_07_UpdateSystemSettings(self, TestCasesStatus=True):
+
+        TestCaseID = '01-29'
+        # Calling Common Functions
+        common = CF.CommonFunctions()
+        common.Header('System Settings', 'Using Put Method System Settings',
+                      'Negative case: Configure the System Settings with invalid PrimaryServerIP & SecondaryServerIP ')
+        # Generate Simple Character String Limit 10 Characters
+        simplestring = common.GenrateSimpleStringLimit10()
+
+        # Test Case Start Time
+        starttime = time.process_time()
+
+        Parameters = {'AuthToken': config.sessionkey,
+                      'AuthUser': config.auth_user,
+                      'PrimaryServerIP': '999.999.999.999',  # Invalid IP address
+                      'SecondaryServerIP': '999.999.999.999',  # Invalid IP address
+                      'ServerName': '' + simplestring + '',
+                      'ServerRole': '0',
+                      'DBName': '' + self.ssinputdata.MainSecondaryDBName + '',
+                      'DBServerName': '' + self.ssinputdata.MainSecondaryDBServerName + '',
+                      'DBUsername': '' + self.ssinputdata.MainSecondaryDBUsername + '',
+                      'DBPassword': '' + self.ssinputdata.MainSecondaryDBPassword + '',
+                      'ServerMode': '0',
+                      'BranchServerIP': '',
+                      'OPRID': '',
+                      'Recorder': '0',
+                      'BranchRemoteIP': '',
+
+                      }
+
+        # Url
+        URL = '' + common.Domain + '' + self.UrlForUpdateSystemSettings + ''
+        # Hit API Through Methods
+        response = requests.put(URL, headers=Parameters)
+        # API Response in JSon Format
+        resp = response.json()
+        # showcode = str(resp['ResponseCode'])
+
+        # Response Code Verification
+        if TestCasesStatus == True:
+            try:
+                if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+
+                    print(common.SuccessMessage)
+                    status = 'Passed'
+                else:
+                    status = 'Failed'
+                    assert False
+
+            # Write Output Result in Excel File
+            finally:
+                common.UpdateExcelTestCase(
+                    SheetName,
+                    TestCaseID,
+                    URL,
+                    Parameters,
+                    status,
+                    starttime,
+                    resp,
+                    TestDescription="Negative case: Invalid PrimaryServerIP & SecondaryServerIP format (e.g., 999.999.999.999); expecting 400 Bad Request with InternalErrorCode.",
+                    Methods="Put Method",
+                    Steps="Send request with invalid PrimaryServerIP & SecondaryServerIP and observe if the system rejects with 400 and InternalErrorCode.",
+                    ExpectedResult="400 Bad Request with a valid InternalErrorCode indicating invalid IP format.",
+                    ExpectedProcessingTime=2,
+                    ExpectedResponseJSON={
+                        'ResponseCode': 400,
+                        'ResponseDescription': 'BAD REQUEST',
+                        'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                        "list": "null",
+                        'TotalRecords': 400
+                    },
+                    ExpectedCode=400
+                )
+        else:
+            TestCasesStatus = False
+            # Test Case End
+
+    # Start Test Case No 01-30
+    def testcase_08_UpdateSystemSettings(self, TestCasesStatus=True):
+
+            TestCaseID = '01-30'
+            # Calling Common Functions
+            common = CF.CommonFunctions()
+            common.Header('System Settings', 'Using Put Method System Settings',
+                          'Negative case: Configure the System Settings with empty ServerRole')
+
+            # Generate Simple Character String Limit 10 Characters
+            simplestring = common.GenrateSimpleStringLimit10()
+
+            # Test Case Start Time
+            starttime = time.process_time()
+
+            Parameters = {'AuthToken': config.sessionkey,
+                          'AuthUser': config.auth_user,
+                          'PrimaryServerIP': ''+self.ssinputdata.MainPrimaryServerIP+'',
+                          'SecondaryServerIP': ''+self.ssinputdata.MainSecondaryServerIP+'',
+                          'ServerName': '' + simplestring + '',
+                          'ServerRole': '',  # Empty value (negative test)
+                          'DBName': '' + self.ssinputdata.MainSecondaryDBName + '',
+                          'DBServerName': '' + self.ssinputdata.MainSecondaryDBServerName + '',
+                          'DBUsername': '' + self.ssinputdata.MainSecondaryDBUsername + '',
+                          'DBPassword': '' + self.ssinputdata.MainSecondaryDBPassword + '',
+                          'ServerMode': '0',
+                          'BranchServerIP': '',
+                          'OPRID': '',
+                          'Recorder': '0',
+                          'BranchRemoteIP': '',
+
+                          }
+
+            # Url
+            URL = '' + common.Domain + '' + self.UrlForUpdateSystemSettings + ''
+            # Hit API Through Methods
+            response = requests.put(URL, headers=Parameters)
+            # API Response in JSon Format
+            resp = response.json()
+            # showcode = str(resp['ResponseCode'])
+
+            # Response Code Verification
+            if TestCasesStatus == True:
+                try:
+                    if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+
+                        print(common.SuccessMessage)
+                        status = 'Passed'
+                    else:
+                        status = 'Failed'
+                        assert False
+
+                # Write Output Result in Excel File
+                finally:
+                    common.UpdateExcelTestCase(
+                        SheetName,
+                        TestCaseID,
+                        URL,
+                        Parameters,
+                        status,
+                        starttime,
+                        resp,
+                        TestDescription="Negative case: Empty ServerRole field; expecting 400 Bad Request with InternalErrorCode.",
+                        Methods="PUT Method",
+                        Steps="Send request with empty ServerRole and verify that the system responds with proper error.",
+                        ExpectedResult="400 Bad Request with a valid InternalErrorCode indicating missing or invalid ServerRole.",
+                        ExpectedProcessingTime=2,
+                        ExpectedResponseJSON={
+                            'ResponseCode': 400,
+                            'ResponseDescription': 'BAD REQUEST',
+                            'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                            "list": "null",
+                            'TotalRecords': 400
+                        },
+                        ExpectedCode=400
+                    )
+            else:
+                TestCasesStatus = False
+                # Test Case End
+
+
+    # Start Test Case No 01-31
+    def testcase_09_UpdateSystemSettings(self, TestCasesStatus=True):
+
+            TestCaseID = '01-31'
+            # Calling Common Functions
+            common = CF.CommonFunctions()
+            common.Header('System Settings', 'Using Put Method System Settings',
+                          'Negative case: Configure the System Settings with missing ServerRole header')
+
+            # Generate Simple Character String Limit 10 Characters
+            simplestring = common.GenrateSimpleStringLimit10()
+
+            # Test Case Start Time
+            starttime = time.process_time()
+
+            Parameters = {'AuthToken': config.sessionkey,
+                          'AuthUser': config.auth_user,
+                          'PrimaryServerIP': ''+self.ssinputdata.MainPrimaryServerIP+'',
+                          'SecondaryServerIP': ''+self.ssinputdata.MainSecondaryServerIP+'',
+                          'ServerName': '' + simplestring + '',
+                          # without ServerRole Header
+                          'DBName': '' + self.ssinputdata.MainSecondaryDBName + '',
+                          'DBServerName': '' + self.ssinputdata.MainSecondaryDBServerName + '',
+                          'DBUsername': '' + self.ssinputdata.MainSecondaryDBUsername + '',
+                          'DBPassword': '' + self.ssinputdata.MainSecondaryDBPassword + '',
+                          'ServerMode': '0',
+                          'BranchServerIP': '',
+                          'OPRID': '',
+                          'Recorder': '0',
+                          'BranchRemoteIP': '',
+
+                          }
+
+            # Url
+            URL = '' + common.Domain + '' + self.UrlForUpdateSystemSettings + ''
+            # Hit API Through Methods
+            response = requests.put(URL, headers=Parameters)
+            # API Response in JSon Format
+            resp = response.json()
+            # showcode = str(resp['ResponseCode'])
+
+            # Response Code Verification
+            if TestCasesStatus == True:
+                try:
+                    if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+
+                        print(common.SuccessMessage)
+                        status = 'Passed'
+                    else:
+                        status = 'Failed'
+                        assert False
+
+                # Write Output Result in Excel File
+                finally:
+                    common.UpdateExcelTestCase(
+                        SheetName,
+                        TestCaseID,
+                        URL,
+                        Parameters,
+                        status,
+                        starttime,
+                        resp,
+                        TestDescription="Negative case: missing ServerRole header; expecting 400 Bad Request with InternalErrorCode.",
+                        Methods="PUT Method",
+                        Steps="Send request with missing ServerRole header and verify that the system responds with proper error.",
+                        ExpectedResult="400 Bad Request with a valid InternalErrorCode indicating missing or invalid ServerRole.",
+                        ExpectedProcessingTime=2,
+                        ExpectedResponseJSON={
+                            'ResponseCode': 400,
+                            'ResponseDescription': 'BAD REQUEST',
+                            'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                            "list": "null",
+                            'TotalRecords': 400
+                        },
+                        ExpectedCode=400
+                    )
+            else:
+                TestCasesStatus = False
+                # Test Case End
+
+
+    # Start Test Case No 01-32
+    def testcase_10_UpdateSystemSettings(self, TestCasesStatus=True):
+
+        TestCaseID = '01-32'
+        # Calling Common Functions
+        common = CF.CommonFunctions()
+        common.Header('System Settings', 'Using Put Method System Settings',
+                      'Negative case: Configure the System Settings with invalid ServerRole (e.g., "abc!@#")')
+
+        # Generate Simple Character String Limit 10 Characters
+        simplestring = common.GenrateSimpleStringLimit10()
+
+        # Test Case Start Time
+        starttime = time.process_time()
+
+        Parameters = {'AuthToken': config.sessionkey,
+                      'AuthUser': config.auth_user,
+                      'PrimaryServerIP': '' + self.ssinputdata.MainPrimaryServerIP + '',
+                      'SecondaryServerIP': '' + self.ssinputdata.MainSecondaryServerIP + '',
+                      'ServerName': '' + simplestring + '',
+                      'ServerRole': 'abc!@#',  # Invalid ServerRole
+                      'DBName': '' + self.ssinputdata.MainSecondaryDBName + '',
+                      'DBServerName': '' + self.ssinputdata.MainSecondaryDBServerName + '',
+                      'DBUsername': '' + self.ssinputdata.MainSecondaryDBUsername + '',
+                      'DBPassword': '' + self.ssinputdata.MainSecondaryDBPassword + '',
+                      'ServerMode': '0',
+                      'BranchServerIP': '',
+                      'OPRID': '',
+                      'Recorder': '0',
+                      'BranchRemoteIP': '',
+
+                      }
+
+        # Url
+        URL = '' + common.Domain + '' + self.UrlForUpdateSystemSettings + ''
+        # Hit API Through Methods
+        response = requests.put(URL, headers=Parameters)
+        # API Response in JSon Format
+        resp = response.json()
+        # showcode = str(resp['ResponseCode'])
+
+        # Response Code Verification
+        if TestCasesStatus == True:
+            try:
+                if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+
+                    print(common.SuccessMessage)
+                    status = 'Passed'
+                else:
+                    status = 'Failed'
+                    assert False
+
+            # Write Output Result in Excel File
+            finally:
+                common.UpdateExcelTestCase(
+                    SheetName,
+                    TestCaseID,
+                    URL,
+                    Parameters,
+                    status,
+                    starttime,
+                    resp,
+                    TestDescription="Negative case: Invalid ServerRole (e.g., 'abc!@#'); expecting 400 Bad Request with InternalErrorCode.",
+                    Methods="PUT Method",
+                    Steps="Send request with ServerRole value as 'abc!@#' and verify the response indicates invalid role format.",
+                    ExpectedResult="400 Bad Request with an InternalErrorCode indicating invalid ServerRole input.",
+                    ExpectedProcessingTime=2,
+                    ExpectedResponseJSON={
+                        'ResponseCode': 400,
+                        'ResponseDescription': 'BAD REQUEST',
+                        'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                        "list": "null",
+                        'TotalRecords': 400
+                    },
+                    ExpectedCode=400
+                )
+        else:
+            TestCasesStatus = False
+            # Test Case End
+
+    # Start Test Case No 01-33
+    def testcase_11_UpdateSystemSettings(self, TestCasesStatus=True):
+
+            TestCaseID = '01-33'
+            # Calling Common Functions
+            common = CF.CommonFunctions()
+            common.Header('System Settings', 'Using Put Method System Settings',
+                          'Negative case: Configure the System Settings with incorrect DBName')
+
+            # Generate Simple Character String Limit 10 Characters
+            simplestring = common.GenrateSimpleStringLimit10()
+
+            # Test Case Start Time
+            starttime = time.process_time()
+
+            Parameters = {'AuthToken': config.sessionkey,
+                          'AuthUser': config.auth_user,
+                          'PrimaryServerIP': '' + self.ssinputdata.MainPrimaryServerIP + '',
+                          'SecondaryServerIP': '' + self.ssinputdata.MainSecondaryServerIP + '',
+                          'ServerName': '' + simplestring + '',
+                          'ServerRole': '0',
+                          'DBName': 'Wrong_DB_Name_XYZ@@#',  # Invalid DB name
+                          'DBServerName': '' + self.ssinputdata.MainSecondaryDBServerName + '',
+                          'DBUsername': '' + self.ssinputdata.MainSecondaryDBUsername + '',
+                          'DBPassword': '' + self.ssinputdata.MainSecondaryDBPassword + '',
+                          'ServerMode': '0',
+                          'BranchServerIP': '',
+                          'OPRID': '',
+                          'Recorder': '0',
+                          'BranchRemoteIP': '',
+
+                          }
+
+            # Url
+            URL = '' + common.Domain + '' + self.UrlForUpdateSystemSettings + ''
+            # Hit API Through Methods
+            response = requests.put(URL, headers=Parameters)
+            # API Response in JSon Format
+            resp = response.json()
+            # showcode = str(resp['ResponseCode'])
+
+            # Response Code Verification
+            if TestCasesStatus == True:
+                try:
+                    if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+
+                        print(common.SuccessMessage)
+                        status = 'Passed'
+                    else:
+                        status = 'Failed'
+                        assert False
+
+                # Write Output Result in Excel File
+                finally:
+                    common.UpdateExcelTestCase(
+                        SheetName,
+                        TestCaseID,
+                        URL,
+                        Parameters,
+                        status,
+                        starttime,
+                        resp,
+                        TestDescription="Negative case: Invalid DBName provided; expecting 400 Bad Request due to database connection failure or invalid configuration with InternalErrorCode",
+                        Methods="PUT Method",
+                        Steps="Send request with a deliberately incorrect DBName and verify the API returns an appropriate error.",
+                        ExpectedResult="400 Bad Request with an InternalErrorCode indicating DB name is invalid or unreachable.",
+                        ExpectedProcessingTime=2,
+                        ExpectedResponseJSON={
+                            'ResponseCode': 400,
+                            'ResponseDescription': 'BAD REQUEST',
+                            'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                            "list": "null",
+                            'TotalRecords': 400
+                        },
+                        ExpectedCode=400
+                    )
+            else:
+                TestCasesStatus = False
+                # Test Case End
+
+
+    # Start Test Case No 01-34
+    def testcase_12_UpdateSystemSettings(self, TestCasesStatus=True):
+
+            TestCaseID = '01-34'
+            # Calling Common Functions
+            common = CF.CommonFunctions()
+            common.Header('System Settings', 'Using Put Method System Settings',
+                          'Negative case: Configure the System Settings with missing DBName Header')
+
+            # Generate Simple Character String Limit 10 Characters
+            simplestring = common.GenrateSimpleStringLimit10()
+
+            # Test Case Start Time
+            starttime = time.process_time()
+
+            Parameters = {'AuthToken': config.sessionkey,
+                          'AuthUser': config.auth_user,
+                          'PrimaryServerIP': '' + self.ssinputdata.MainPrimaryServerIP + '',
+                          'SecondaryServerIP': '' + self.ssinputdata.MainSecondaryServerIP + '',
+                          'ServerName': '' + simplestring + '',
+                          'ServerRole': '0',
+                           # with missing DBName Header
+                          'DBServerName': '' + self.ssinputdata.MainSecondaryDBServerName + '',
+                          'DBUsername': '' + self.ssinputdata.MainSecondaryDBUsername + '',
+                          'DBPassword': '' + self.ssinputdata.MainSecondaryDBPassword + '',
+                          'ServerMode': '0',
+                          'BranchServerIP': '',
+                          'OPRID': '',
+                          'Recorder': '0',
+                          'BranchRemoteIP': '',
+
+                          }
+
+            # Url
+            URL = '' + common.Domain + '' + self.UrlForUpdateSystemSettings + ''
+            # Hit API Through Methods
+            response = requests.put(URL, headers=Parameters)
+            # API Response in JSon Format
+            resp = response.json()
+            # showcode = str(resp['ResponseCode'])
+
+            # Response Code Verification
+            if TestCasesStatus == True:
+                try:
+                    if resp['ResponseCode'] == 400 and resp.get('InternalErrorCode'):
+
+                        print(common.SuccessMessage)
+                        status = 'Passed'
+                    else:
+                        status = 'Failed'
+                        assert False
+
+                # Write Output Result in Excel File
+                finally:
+                    common.UpdateExcelTestCase(
+                        SheetName,
+                        TestCaseID,
+                        URL,
+                        Parameters,
+                        status,
+                        starttime,
+                        resp,
+                        TestDescription="Negative case: with missing DBName Header; expecting 400 Bad Request due to database connection failure or invalid configuration with InternalErrorCode",
+                        Methods="PUT Method",
+                        Steps="Send request with a deliberately with missing DBName Header and verify the API returns an appropriate error.",
+                        ExpectedResult="400 Bad Request with an InternalErrorCode indicating with missing DBName Header or unreachable.",
+                        ExpectedProcessingTime=2,
+                        ExpectedResponseJSON={
+                            'ResponseCode': 400,
+                            'ResponseDescription': 'BAD REQUEST',
+                            'InternalErrorCode': 'SomeErrorCode',  # generic placeholder
+                            "list": "null",
+                            'TotalRecords': 400
+                        },
+                        ExpectedCode=400
+                    )
+            else:
+                TestCasesStatus = False
+                # Test Case End
